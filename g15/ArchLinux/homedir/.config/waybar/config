@@ -1,0 +1,47 @@
+{
+    "layer": "top",
+	"position": "bottom",
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    // "modules-center": ["sway/window"],
+    "modules-right": ["custom/package-count", "cpu", "memory", "backlight#value",  "pulseaudio#sound", "battery", "clock", "tray"],
+    "sway/window": {
+        "max-length": 50
+    },
+    "battery": {
+		"bat": "BAT1",
+        "format": "BAT {capacity}%",
+		"format-charging": "CHR {capacity}%",
+        "format-plugged": "CHR {capacity}%",
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+	"tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+	"pulseaudio#sound": {
+        "format": "VOL: {volume}",
+    },
+	"custom/package-count": {
+        "format": "{} packages",
+        "exec": "echo `pacman -Qe | wc -l`",
+        "interval": 3600
+    },
+	"custom/package-updates": {
+        "format": "{} updates",
+        "exec": "echo `pacman -Qu | wc -l`",
+        "interval": 3600
+    },
+	"backlight#value": {
+        "device": "amdgpu_bl1",
+        "format": "BRT: {percent}",
+    },
+	"cpu": {
+        "format": "CPU: {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "MEM: {}%"
+    }
+}

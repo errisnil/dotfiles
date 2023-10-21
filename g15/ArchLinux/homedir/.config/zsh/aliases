@@ -1,0 +1,28 @@
+alias zc="nvim $ZDOTDIR/.zshrc"
+alias azc="source $ZDOTDIR/.zshrc"
+alias s="sudo systemctl"
+alias j="sudo journalctl"
+alias moz="cd /opt/homebrew/opt/mozjpeg/bin"
+alias radvm="ssh -i ~/.ssh/centralindia.pem abhishek@20.219.128.44"
+alias sea="ssh -i ~/.ssh/azure-sea.pem abhishek@13.76.102.60"
+alias vvm="ssh -i ~/.ssh/id_ed25519 abhishek@139.84.132.147"
+alias rdek="cockroach sql --certs-dir=$HOME/code/enalk/cockroach/certs --host=roach.dev.enalk.com:39876"
+
+if [[ ! -z `command -v pnpm` ]]; then
+	alias npm="pnpm"
+	alias npx="pnpm dlx"
+fi
+
+if [[ ! -z `command -v exa` ]]; then
+	alias ls="exa"
+fi
+
+if [[ ! -z `which nvim` ]]; then
+	alias vim="$(which nvim)"
+fi
+
+if [[ ! -z "command -v paru" ]]; then
+	alias yay="paru --skipreview"
+fi
+
+alias puppy="ssh abhishek@45.76.156.232"

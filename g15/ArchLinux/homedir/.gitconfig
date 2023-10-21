@@ -1,0 +1,14 @@
+[includeIf "gitdir:~/code/mp/"]
+	path = "~/code/mp/.gitconfig"
+
+[includeIf "gitdir:~/code/enalk/"]
+    path = "~/code/enalk/.gitconfig"
+
+[includeIf "gitdir:~/code/shadoweet/"]
+    path = "~/code/shadoweet/.gitconfig"
+
+[includeIf "gitdir:~/personal/"]
+    path = "~/personal/.gitconfig"
+
+[init]
+        defaultBranch = main
