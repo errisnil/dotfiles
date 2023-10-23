@@ -11,4 +11,8 @@
     path = "~/personal/.gitconfig"
 
 [init]
-        defaultBranch = main
+    defaultBranch = main
+
+[pull]
+	rebase = false
+
