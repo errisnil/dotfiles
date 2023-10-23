@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: "Noto Sans Mono", monospace;
-    font-size: 10px;
+    font-size: 12px;
     min-height: 0;
 }
 
@@ -25,33 +25,52 @@ tooltip label {
 
 #workspaces button {
     padding: 0 5px;
-	background: rgba(43, 48, 59, 0.8);
+	background: #181825;
     /*background: transparent;*/
     color: white;
     border-bottom: 3px solid transparent;
 }
 
 #workspaces button.focused {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    background: #9399b2;
+    border-bottom: 3px solid black;
+	color: black;
+}
+#workspaces button:last-child {
+	border-radius: 0 5px 5px 0;	
 }
 
-#mode, #clock, #battery, #tray, #custom-package-count,
+#clock, #battery, #custom-package-count,
 #custom-package-updates, #cpu, #memory, #pulseaudio.sound, #backlight.value {
     padding: 0 10px;
 }
 
-#mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+#clock {
+	background-color: #89b4fa; 
+	color: black;
 }
-
-#clock, #pulseaudio.sound, #memory, #custom-package-count{
-    background-color: #64727D;
+#battery {
+	background-color: #a6e3a1;
+	color: black;
 }
-
-#battery, #backlight.value, #cpu, #custom-package-updates{
-    background-color: #ffffff;
-    color: black;
+#pulseaudio.sound {
+	background-color: #e64553;
+	color: white;
 }
-
+#backlight.value {
+	background-color: #e5c890;
+	color: black;
+}
+#memory {
+	background-color: #8839ef;
+	color: white;
+}
+#cpu {
+	background-color: #179299;
+	color: white;
+}
+#custom-package-count {
+	background-color: #babbf1;
+	color: black;
+	border-radius: 5px 0 0 5px;
+}

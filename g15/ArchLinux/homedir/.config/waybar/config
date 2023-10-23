@@ -3,7 +3,7 @@
 	"position": "bottom",
     "modules-left": ["sway/workspaces", "sway/mode"],
     // "modules-center": ["sway/window"],
-    "modules-right": ["custom/package-count", "cpu", "memory", "backlight#value",  "pulseaudio#sound", "battery", "clock", "tray"],
+    "modules-right": ["custom/package-count", "cpu", "memory", "backlight#value",  "pulseaudio#sound", "battery", "clock"],
     "sway/window": {
         "max-length": 50
     },
@@ -34,7 +34,7 @@
         "interval": 3600
     },
 	"backlight#value": {
-        "device": "amdgpu_bl1",
+        "device": "amdgpu_bl0",
         "format": "BRT: {percent}",
     },
 	"cpu": {
