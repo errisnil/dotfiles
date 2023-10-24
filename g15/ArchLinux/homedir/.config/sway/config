@@ -1,5 +1,7 @@
 set $mod Mod4
 
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
 font pango:Noto Sans Mono 8
 
 # exec --no-startup-id dex --autostart --environment sway
@@ -35,12 +37,14 @@ bindsym $mod+Return exec foot
 bindsym $mod+q kill
 
 # swaylock
-bindsym $mod+Shift+q exec 'swaylock -f -i `find ~/personal/wallpapers -maxdepth 1 -type f | shuf -n 1`'
+bindsym $mod+Shift+q exec 'swaylock -f -c 000000'
 
 # rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
+# bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
-bindsym $mod+p exec --no-startup-id ~/code/scripts/rrun.sh
+# bindsym $mod+p exec --no-startup-id ~/code/scripts/rrun.sh
+bindsym $mod+d exec $menu
+
 
 # lock screen
 # bindsym $mod+x exec --no-startup-id i3lock --nofork --show-failed-attempts --ignore-empty-password --image ~/.cache/.lock.png
@@ -101,8 +105,8 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86Launch1 exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl prev
-bindsym XF86MonBrightnessDown exec --no-startup-id 	brightnessctl --device amdgpu_bl1 s 10-
-bindsym XF86MonBrightnessUp exec --no-startup-id 	brightnessctl --device amdgpu_bl1 s 10+
+bindsym XF86MonBrightnessDown exec --no-startup-id 	brightnessctl --device amdgpu_bl0 s 10-
+bindsym XF86MonBrightnessUp exec --no-startup-id 	brightnessctl --device amdgpu_bl0 s 10+
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -146,10 +150,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "sway exit"
+
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -199,13 +201,12 @@ output eDP-1 mode 2560x1440@60.001Hz scale 1.5
 
 blur enable
 blur_xray disable
-blur_radius 10
+blur_radius 4
 corner_radius 15
 
 # handle Idle
 exec swayidle -w \
-	timeout 1800 'swaylock -f -i `find ~/personal/wallpapers -maxdepth 1 -type f | shuf -n 1`' \
-	timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
-	before-sleep 'playerctl pause' \
-	resume 'swaymsg "output * power on"'
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 000000'
 
