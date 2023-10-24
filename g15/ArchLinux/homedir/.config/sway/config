@@ -37,7 +37,7 @@ bindsym $mod+Return exec foot
 bindsym $mod+q kill
 
 # swaylock
-bindsym $mod+Shift+q exec 'swaylock -f -c 000000'
+bindsym $mod+Shift+q exec 'swaylock -f -i ~/.cache/.lock.png'
 
 # rofi
 # bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -206,7 +206,7 @@ corner_radius 15
 
 # handle Idle
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
+    timeout 300 'swaylock -f -i ~/.cache/.lock.png' \
     timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' resume 'swaymsg "output * power on"' \
     before-sleep 'swaylock -f -c 000000'
 
