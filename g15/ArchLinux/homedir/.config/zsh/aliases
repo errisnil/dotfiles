@@ -8,15 +8,6 @@ alias sea="ssh -i ~/.ssh/azure-sea.pem abhishek@13.76.102.60"
 alias vvm="ssh -i ~/.ssh/id_ed25519 abhishek@139.84.132.147"
 alias rdek="cockroach sql --certs-dir=$HOME/code/enalk/cockroach/certs --host=roach.dev.enalk.com:39876"
 
-if [[ ! -z `command -v pnpm` ]]; then
-	alias npm="pnpm"
-	alias npx="pnpm dlx"
-fi
-
-if [[ ! -z `command -v exa` ]]; then
-	alias ls="exa"
-fi
-
 if [[ ! -z `which nvim` ]]; then
 	alias vim="$(which nvim)"
 fi
