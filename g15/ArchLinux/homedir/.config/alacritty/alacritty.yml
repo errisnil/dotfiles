@@ -2,15 +2,15 @@ env:
   TERM: xterm-256color
 font:
   normal:
-    family: Noto Sans Mono 
+    family: Fira Code 
     style: Regular
   bold:
-    family: Noto Sans Mono
+    family: Fira Code
     style: Bold
   italic:
-    family: Noto Sans Mono
+    family: Fira Code
     style: Italic
-  size: 10
+  size: 11
 window:
   opacity: 0.9
   option_as_alt: "Both"

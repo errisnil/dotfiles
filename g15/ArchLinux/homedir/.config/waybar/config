@@ -1,10 +1,9 @@
 {
     "layer": "top",
 	"position": "bottom",
-    // "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-left": ["hyprland/workspaces", "hyprland/mode"],
+    "modules-left": ["sway/workspaces", "sway/mode"],
     // "modules-center": ["sway/window"],
-    "modules-right": ["custom/package-count", "cpu", "memory", "backlight#value",  "pulseaudio#sound", "battery", "clock"],
+    "modules-right": ["custom/package-count", "cpu", "memory", "backlight#value",  "pulseaudio#sound", "battery", "clock", "tray"],
     "sway/window": {
         "max-length": 50
     },

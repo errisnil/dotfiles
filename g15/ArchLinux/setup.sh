@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-sudo pacman -Sy chromium foot aria2 curl git neovim wl-clipboard\
-	gnupg polkit polkit-gnome waybar dunst dex tmux zsh
+sudo pacman -Sy chromium alacritty aria2 curl git neovim wl-clipboard \
+	gnupg polkit polkit-gnome waybar dunst dex tmux zsh ttf-fira-code \
+	ttf-nerd-fonts-symbols noto-fonts noto-fonts-cjk network-manager-applet
 mkdir -p ~/Downloads
 cd ~/Downloads
 if [ -z `command -v paru` ]; then
