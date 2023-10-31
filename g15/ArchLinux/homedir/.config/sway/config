@@ -31,7 +31,7 @@ floating_maximum_size 1366 x 768
 
 # start a terminal
 # bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec foot
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+q kill

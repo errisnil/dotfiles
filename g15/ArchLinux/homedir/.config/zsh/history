@@ -10,3 +10,5 @@ setopt APPEND_HISTORY INC_APPEND_HISTORY NO_SHARE_HISTORY HIST_IGNORE_DUPS HIST_
 export HISTFILE="$HOME/.cache/.zsh_history"
 export HISTSIZE=1000
 export SAVEHIST=1000
+
+bindkey "^R" history-incremental-search-backward

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 sudo pacman -Sy chromium foot aria2 curl git neovim wl-clipboard\
-	gnupg polkit polkit-gnome waybar dunst dex tmux hyprland zsh
+	gnupg polkit polkit-gnome waybar dunst dex tmux zsh
 mkdir -p ~/Downloads
 cd ~/Downloads
 if [ -z `command -v paru` ]; then
@@ -11,7 +11,8 @@ else
 	echo "paru is already installed"
 fi
 alias yay="paru --skipreview"
-yay -Sy swww google-chrome
+yay -Sy swayfx swww google-chrome
+# also install swayrandr
 
 # Rust
 if [ -z `command -v cargo` ]; then
