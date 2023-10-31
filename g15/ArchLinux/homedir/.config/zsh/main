@@ -1,5 +1,3 @@
-# cargo
-source $HOME/.cargo/env
 source $ZDOTDIR/keybindings
 source $ZDOTDIR/history
 source $ZDOTDIR/env
@@ -7,5 +5,4 @@ source $ZDOTDIR/zplug
 source $ZDOTDIR/aliases
 source $ZDOTDIR/prompt
 source $ZDOTDIR/secrets
-# Completions
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+source $HOME/.cargo/env

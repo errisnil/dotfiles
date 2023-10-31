@@ -1,5 +1,5 @@
 export GOPATH="$HOME/code/go"
-export EDITOR="/usr/local/bin/nvim"
+export EDITOR=`command -v nvim`
 export VISUAL="$EDITOR"
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
@@ -10,7 +10,10 @@ export GPG_TTY=$(tty)
 export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export _JAVA_AWT_WM_NONREPARENTING=1
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export VOLTA_HOME="$HOME/.volta"
 
+export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$GOPATH/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
@@ -19,4 +22,7 @@ export PATH="$HOME/.local/protoc/bin:$PATH"
 export PATH="$HOME/.local/lualsp/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.config/rofi/scripts:$PATH"
-
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac

@@ -37,7 +37,7 @@ bindsym $mod+Return exec foot
 bindsym $mod+q kill
 
 # swaylock
-bindsym $mod+Shift+q exec 'swaylock -f -i ~/.cache/.lock.png'
+bindsym $mod+Shift+q exec 'swaylock -f -c 000000'
 
 # rofi
 # bindsym $mod+d exec --no-startup-id rofi -show drun
@@ -197,8 +197,7 @@ input "type:keyboard" {
     repeat_rate 30
 }
 
-include monitor.swayconfig
-# output eDP-1 mode 2560x1440@60.001Hz scale 1.5
+output eDP-1 mode 2560x1440@60.001Hz scale 1.5
 
 blur enable
 blur_xray disable
@@ -207,9 +206,7 @@ corner_radius 15
 
 # handle Idle
 exec swayidle -w \
-    timeout 300 'swaylock -f -i ~/.cache/.lock.png' \
-    timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' \
-	resume 'swaymsg "output * power on"' \
-    before-sleep 'playerctl pause && swaylock -f -i ~/.cache/.lock.png'
-	
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 10 'if pgrep -x swaylock; then swaymsg "output * power off"; fi' resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 000000'
 
