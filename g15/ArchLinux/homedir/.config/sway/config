@@ -19,8 +19,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # dunst 
 exec --no-startup-id dunst
 
+# xss-lock
+exec --no-startup-id xss-lock --transfer-sleep-lock -- swaylock -f -i ~/.cache/.lock.png
+
 # nm-applet
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -43,7 +46,7 @@ bindsym $mod+Shift+q exec 'swaylock -f -i ~/.cache/.lock.png'
 # bindsym $mod+d exec --no-startup-id rofi -show drun
 # bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
 # bindsym $mod+p exec --no-startup-id ~/code/scripts/rrun.sh
-bindsym $mod+d exec $menu
+bindsym $mod+d exec bemenu-run --fork
 
 
 # lock screen
@@ -105,8 +108,8 @@ bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
 bindsym XF86Launch1 exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl prev
-bindsym XF86MonBrightnessDown exec --no-startup-id 	brightnessctl --device amdgpu_bl0 s 10-
-bindsym XF86MonBrightnessUp exec --no-startup-id 	brightnessctl --device amdgpu_bl0 s 10+
+bindsym XF86MonBrightnessDown exec --no-startup-id 	brightnessctl --device amdgpu_bl2 s 10-
+bindsym XF86MonBrightnessUp exec --no-startup-id 	brightnessctl --device amdgpu_bl2 s 10+
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -190,6 +193,8 @@ bar swaybar_command waybar
 input "type:touchpad" {
     tap enabled
     natural_scroll enabled 
+	accel_profile "adaptive"
+	pointer_accel 0.1
 }
 
 input "type:keyboard" {

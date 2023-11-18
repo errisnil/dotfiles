@@ -1,2 +1,2 @@
-output eDP-1 mode 2560x1440@60002Hz pos 0 0 scale 1.5
+output eDP-1 mode 2560x1440@60002Hz pos 0 0 scale 1.2
 focus output eDP-1
