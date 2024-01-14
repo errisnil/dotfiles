@@ -4,5 +4,4 @@ source $ZDOTDIR/env
 source $ZDOTDIR/zplug
 source $ZDOTDIR/aliases
 source $ZDOTDIR/prompt
-source $ZDOTDIR/secrets
 source $HOME/.cargo/env
