@@ -7,6 +7,9 @@
 [includeIf "gitdir:~/code/shadoweet/"]
     path = "~/code/shadoweet/.gitconfig"
 
+[includeIf "gitdir:~/code/tc/"]
+    path = "~/code/tc/.gitconfig"
+
 [includeIf "gitdir:~/personal/"]
     path = "~/personal/.gitconfig"
 
